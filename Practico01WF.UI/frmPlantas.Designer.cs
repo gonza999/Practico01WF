@@ -29,9 +29,13 @@ namespace Practico01WF.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DetallesGrillaPnl = new System.Windows.Forms.Panel();
+            this.CantidadPaginasLbl = new System.Windows.Forms.Label();
+            this.PaginaActualLbl = new System.Windows.Forms.Label();
             this.CantidadLbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.ToolStripPnl = new System.Windows.Forms.Panel();
             this.HerramientasTsb = new System.Windows.Forms.ToolStrip();
@@ -43,20 +47,13 @@ namespace Practico01WF.UI
             this.CmnPlanta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CmnTipoPlanta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmnTipoEnvase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PaginaActualLbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CantidadPaginasLbl = new System.Windows.Forms.Label();
+            this.BotonesPnl = new System.Windows.Forms.Panel();
             this.NuevoBtn = new System.Windows.Forms.ToolStripButton();
             this.BorrarBtn = new System.Windows.Forms.ToolStripButton();
             this.EditarBtn = new System.Windows.Forms.ToolStripButton();
             this.BuscarBtn = new System.Windows.Forms.ToolStripButton();
             this.ActualizarBtn = new System.Windows.Forms.ToolStripButton();
             this.ImprimirBtn = new System.Windows.Forms.ToolStripButton();
-            this.UltimoBtn = new System.Windows.Forms.Button();
-            this.SiguienteBtn = new System.Windows.Forms.Button();
-            this.AnteriorBtn = new System.Windows.Forms.Button();
-            this.PrimeroBtn = new System.Windows.Forms.Button();
             this.DetallesGrillaPnl.SuspendLayout();
             this.ToolStripPnl.SuspendLayout();
             this.HerramientasTsb.SuspendLayout();
@@ -67,10 +64,7 @@ namespace Practico01WF.UI
             // DetallesGrillaPnl
             // 
             this.DetallesGrillaPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.DetallesGrillaPnl.Controls.Add(this.UltimoBtn);
-            this.DetallesGrillaPnl.Controls.Add(this.SiguienteBtn);
-            this.DetallesGrillaPnl.Controls.Add(this.AnteriorBtn);
-            this.DetallesGrillaPnl.Controls.Add(this.PrimeroBtn);
+            this.DetallesGrillaPnl.Controls.Add(this.BotonesPnl);
             this.DetallesGrillaPnl.Controls.Add(this.CantidadPaginasLbl);
             this.DetallesGrillaPnl.Controls.Add(this.PaginaActualLbl);
             this.DetallesGrillaPnl.Controls.Add(this.CantidadLbl);
@@ -83,6 +77,26 @@ namespace Practico01WF.UI
             this.DetallesGrillaPnl.Size = new System.Drawing.Size(800, 78);
             this.DetallesGrillaPnl.TabIndex = 3;
             // 
+            // CantidadPaginasLbl
+            // 
+            this.CantidadPaginasLbl.AutoSize = true;
+            this.CantidadPaginasLbl.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CantidadPaginasLbl.Location = new System.Drawing.Point(137, 44);
+            this.CantidadPaginasLbl.Name = "CantidadPaginasLbl";
+            this.CantidadPaginasLbl.Size = new System.Drawing.Size(14, 14);
+            this.CantidadPaginasLbl.TabIndex = 2;
+            this.CantidadPaginasLbl.Text = "0";
+            // 
+            // PaginaActualLbl
+            // 
+            this.PaginaActualLbl.AutoSize = true;
+            this.PaginaActualLbl.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaginaActualLbl.Location = new System.Drawing.Point(89, 44);
+            this.PaginaActualLbl.Name = "PaginaActualLbl";
+            this.PaginaActualLbl.Size = new System.Drawing.Size(14, 14);
+            this.PaginaActualLbl.TabIndex = 2;
+            this.PaginaActualLbl.Text = "0";
+            // 
             // CantidadLbl
             // 
             this.CantidadLbl.AutoSize = true;
@@ -92,6 +106,26 @@ namespace Practico01WF.UI
             this.CantidadLbl.Size = new System.Drawing.Size(14, 14);
             this.CantidadLbl.TabIndex = 2;
             this.CantidadLbl.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(109, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 14);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "de";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 14);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Pagina :";
             // 
             // label
             // 
@@ -164,8 +198,8 @@ namespace Practico01WF.UI
             // DatosDgv
             // 
             this.DatosDgv.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DatosDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DatosDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DatosDgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DatosDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DatosDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -204,45 +238,13 @@ namespace Practico01WF.UI
             this.cmnTipoEnvase.Name = "cmnTipoEnvase";
             this.cmnTipoEnvase.ReadOnly = true;
             // 
-            // label1
+            // BotonesPnl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 14);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Pagina :";
-            // 
-            // PaginaActualLbl
-            // 
-            this.PaginaActualLbl.AutoSize = true;
-            this.PaginaActualLbl.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaginaActualLbl.Location = new System.Drawing.Point(89, 44);
-            this.PaginaActualLbl.Name = "PaginaActualLbl";
-            this.PaginaActualLbl.Size = new System.Drawing.Size(14, 14);
-            this.PaginaActualLbl.TabIndex = 2;
-            this.PaginaActualLbl.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 14);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "de";
-            // 
-            // CantidadPaginasLbl
-            // 
-            this.CantidadPaginasLbl.AutoSize = true;
-            this.CantidadPaginasLbl.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadPaginasLbl.Location = new System.Drawing.Point(137, 44);
-            this.CantidadPaginasLbl.Name = "CantidadPaginasLbl";
-            this.CantidadPaginasLbl.Size = new System.Drawing.Size(14, 14);
-            this.CantidadPaginasLbl.TabIndex = 2;
-            this.CantidadPaginasLbl.Text = "0";
+            this.BotonesPnl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BotonesPnl.Location = new System.Drawing.Point(175, 0);
+            this.BotonesPnl.Name = "BotonesPnl";
+            this.BotonesPnl.Size = new System.Drawing.Size(625, 78);
+            this.BotonesPnl.TabIndex = 3;
             // 
             // NuevoBtn
             // 
@@ -287,6 +289,7 @@ namespace Practico01WF.UI
             this.BuscarBtn.Size = new System.Drawing.Size(46, 59);
             this.BuscarBtn.Text = "Buscar";
             this.BuscarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BuscarBtn.Click += new System.EventHandler(this.BuscarBtn_Click);
             // 
             // ActualizarBtn
             // 
@@ -298,6 +301,7 @@ namespace Practico01WF.UI
             this.ActualizarBtn.Size = new System.Drawing.Size(63, 59);
             this.ActualizarBtn.Text = "Actualizar";
             this.ActualizarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ActualizarBtn.Click += new System.EventHandler(this.ActualizarBtn_Click);
             // 
             // ImprimirBtn
             // 
@@ -309,57 +313,6 @@ namespace Practico01WF.UI
             this.ImprimirBtn.Size = new System.Drawing.Size(57, 59);
             this.ImprimirBtn.Text = "Imprimir";
             this.ImprimirBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // UltimoBtn
-            // 
-            this.UltimoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.UltimoBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.UltimoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.UltimoBtn.Image = global::Practico01WF.UI.Properties.Resources.end_button_30px;
-            this.UltimoBtn.Location = new System.Drawing.Point(267, 39);
-            this.UltimoBtn.Name = "UltimoBtn";
-            this.UltimoBtn.Size = new System.Drawing.Size(27, 23);
-            this.UltimoBtn.TabIndex = 3;
-            this.UltimoBtn.UseVisualStyleBackColor = false;
-            this.UltimoBtn.Click += new System.EventHandler(this.UltimoBtn_Click);
-            // 
-            // SiguienteBtn
-            // 
-            this.SiguienteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SiguienteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SiguienteBtn.Image = global::Practico01WF.UI.Properties.Resources.next_30px;
-            this.SiguienteBtn.Location = new System.Drawing.Point(234, 39);
-            this.SiguienteBtn.Name = "SiguienteBtn";
-            this.SiguienteBtn.Size = new System.Drawing.Size(27, 23);
-            this.SiguienteBtn.TabIndex = 3;
-            this.SiguienteBtn.UseVisualStyleBackColor = false;
-            this.SiguienteBtn.Click += new System.EventHandler(this.SiguienteBtn_Click);
-            // 
-            // AnteriorBtn
-            // 
-            this.AnteriorBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.AnteriorBtn.BackgroundImage = global::Practico01WF.UI.Properties.Resources.previous_30px;
-            this.AnteriorBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.AnteriorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AnteriorBtn.Location = new System.Drawing.Point(201, 39);
-            this.AnteriorBtn.Name = "AnteriorBtn";
-            this.AnteriorBtn.Size = new System.Drawing.Size(27, 23);
-            this.AnteriorBtn.TabIndex = 3;
-            this.AnteriorBtn.UseVisualStyleBackColor = false;
-            this.AnteriorBtn.Click += new System.EventHandler(this.AnteriorBtn_Click);
-            // 
-            // PrimeroBtn
-            // 
-            this.PrimeroBtn.BackColor = System.Drawing.Color.Black;
-            this.PrimeroBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PrimeroBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PrimeroBtn.Image = global::Practico01WF.UI.Properties.Resources.first_30px;
-            this.PrimeroBtn.Location = new System.Drawing.Point(168, 39);
-            this.PrimeroBtn.Name = "PrimeroBtn";
-            this.PrimeroBtn.Size = new System.Drawing.Size(27, 23);
-            this.PrimeroBtn.TabIndex = 3;
-            this.PrimeroBtn.UseVisualStyleBackColor = false;
-            this.PrimeroBtn.Click += new System.EventHandler(this.PrimeroBtn_Click);
             // 
             // frmPlantas
             // 
@@ -412,9 +365,6 @@ namespace Practico01WF.UI
         private System.Windows.Forms.Label PaginaActualLbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button UltimoBtn;
-        private System.Windows.Forms.Button SiguienteBtn;
-        private System.Windows.Forms.Button AnteriorBtn;
-        private System.Windows.Forms.Button PrimeroBtn;
+        private System.Windows.Forms.Panel BotonesPnl;
     }
 }

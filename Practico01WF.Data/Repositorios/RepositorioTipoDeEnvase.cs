@@ -58,7 +58,10 @@ namespace Practico01WF.Data.Repositorios
         {
             try
             {
-                return context.TiposDeEnvases.ToList();
+                return context.TiposDeEnvases
+                    .OrderBy(te=>te.Descripcion)
+                    .AsNoTracking()
+                    .ToList();
             }
             catch (Exception e)
             {

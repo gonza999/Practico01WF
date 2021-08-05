@@ -27,11 +27,37 @@ namespace Practico01WF.Services.Servicios
             throw new NotImplementedException();
         }
 
+        public List<Planta> Find(Func<Planta, bool> predicate, int cantidad, int pagina)
+        {
+            try
+            {
+                return repositorioPlanta.Find(predicate,cantidad,pagina);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+
+            }
+        }
+
         public int GetCantidad()
         {
             try
             {
                 return repositorioPlanta.GetCantidad();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+
+            }
+        }
+
+        public int GetCantidad(Func<Planta, bool> predicate)
+        {
+            try
+            {
+                return repositorioPlanta.GetCantidad(predicate);
             }
             catch (Exception e)
             {

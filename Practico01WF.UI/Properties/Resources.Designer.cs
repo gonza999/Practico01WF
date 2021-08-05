@@ -193,6 +193,16 @@ namespace Practico01WF.UI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_more_40px {
+            get {
+                object obj = ResourceManager.GetObject("search_more_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sprout_40px {
             get {
                 object obj = ResourceManager.GetObject("sprout_40px", resourceCulture);

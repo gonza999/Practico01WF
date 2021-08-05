@@ -11,6 +11,8 @@ namespace Practico01WF.Services.Servicios.Facades
     {
         List<Planta> GetLista(int cantidad, int pagina);
 
+        List<Planta> Find(Func<Planta, bool> predicate, int cantidad, int pagina);
+
         Planta GetPlantaPorId(int id);
 
         void Guardar(Planta planta);
@@ -18,6 +20,9 @@ namespace Practico01WF.Services.Servicios.Facades
         bool Existe(Planta planta);
 
         int GetCantidad();
+
+        int GetCantidad(Func<Planta, bool> predicate);
+
 
         void Borrar(int id);
     }

@@ -30,13 +30,13 @@ namespace Practico01WF.UI
         private void InitializeComponent()
         {
             this.PlantaTxt = new System.Windows.Forms.TextBox();
-            this.OkPbx = new System.Windows.Forms.PictureBox();
-            this.CancelPbx = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TipoPlantaCmb = new System.Windows.Forms.ComboBox();
             this.TipoEnvaseCmb = new System.Windows.Forms.ComboBox();
+            this.OkPbx = new System.Windows.Forms.PictureBox();
+            this.CancelPbx = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.OkPbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPbx)).BeginInit();
             this.SuspendLayout();
@@ -48,30 +48,6 @@ namespace Practico01WF.UI
             this.PlantaTxt.Name = "PlantaTxt";
             this.PlantaTxt.Size = new System.Drawing.Size(159, 20);
             this.PlantaTxt.TabIndex = 12;
-            // 
-            // OkPbx
-            // 
-            this.OkPbx.BackColor = System.Drawing.Color.Transparent;
-            this.OkPbx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OkPbx.Image = global::Practico01WF.UI.Properties.Resources.ok_40px;
-            this.OkPbx.Location = new System.Drawing.Point(35, 151);
-            this.OkPbx.Name = "OkPbx";
-            this.OkPbx.Size = new System.Drawing.Size(44, 43);
-            this.OkPbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.OkPbx.TabIndex = 10;
-            this.OkPbx.TabStop = false;
-            // 
-            // CancelPbx
-            // 
-            this.CancelPbx.BackColor = System.Drawing.Color.Transparent;
-            this.CancelPbx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CancelPbx.Image = global::Practico01WF.UI.Properties.Resources.cancel_40px;
-            this.CancelPbx.Location = new System.Drawing.Point(193, 151);
-            this.CancelPbx.Name = "CancelPbx";
-            this.CancelPbx.Size = new System.Drawing.Size(44, 43);
-            this.CancelPbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CancelPbx.TabIndex = 11;
-            this.CancelPbx.TabStop = false;
             // 
             // label1
             // 
@@ -105,6 +81,7 @@ namespace Practico01WF.UI
             // 
             // TipoPlantaCmb
             // 
+            this.TipoPlantaCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoPlantaCmb.FormattingEnabled = true;
             this.TipoPlantaCmb.Location = new System.Drawing.Point(158, 65);
             this.TipoPlantaCmb.Name = "TipoPlantaCmb";
@@ -113,11 +90,36 @@ namespace Practico01WF.UI
             // 
             // TipoEnvaseCmb
             // 
+            this.TipoEnvaseCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoEnvaseCmb.FormattingEnabled = true;
             this.TipoEnvaseCmb.Location = new System.Drawing.Point(158, 101);
             this.TipoEnvaseCmb.Name = "TipoEnvaseCmb";
             this.TipoEnvaseCmb.Size = new System.Drawing.Size(121, 21);
             this.TipoEnvaseCmb.TabIndex = 13;
+            // 
+            // OkPbx
+            // 
+            this.OkPbx.BackColor = System.Drawing.Color.Transparent;
+            this.OkPbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OkPbx.Image = global::Practico01WF.UI.Properties.Resources.ok_40px;
+            this.OkPbx.Location = new System.Drawing.Point(35, 151);
+            this.OkPbx.Name = "OkPbx";
+            this.OkPbx.Size = new System.Drawing.Size(44, 43);
+            this.OkPbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.OkPbx.TabIndex = 10;
+            this.OkPbx.TabStop = false;
+            // 
+            // CancelPbx
+            // 
+            this.CancelPbx.BackColor = System.Drawing.Color.Transparent;
+            this.CancelPbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CancelPbx.Image = global::Practico01WF.UI.Properties.Resources.cancel_40px;
+            this.CancelPbx.Location = new System.Drawing.Point(193, 151);
+            this.CancelPbx.Name = "CancelPbx";
+            this.CancelPbx.Size = new System.Drawing.Size(44, 43);
+            this.CancelPbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CancelPbx.TabIndex = 11;
+            this.CancelPbx.TabStop = false;
             // 
             // frmPlantasAe
             // 

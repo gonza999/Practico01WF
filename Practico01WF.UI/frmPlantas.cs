@@ -1,4 +1,5 @@
 ﻿using Practico01WF.Entities;
+using Practico01WF.Entities.Enums;
 using Practico01WF.Services.Servicios;
 using Practico01WF.Services.Servicios.Facades;
 using Practico01WF.UI.Helpers;
@@ -20,6 +21,7 @@ namespace Practico01WF.UI
         {
             InitializeComponent();
         }
+        private Filtro filtro=Filtro.off;
         private IServicioPlanta servicio;
         private List<Planta> lista;
         private int Cantidad;
@@ -31,14 +33,51 @@ namespace Practico01WF.UI
             try
             {
                 servicio = new ServicioPlanta();
-                paginaActual = 1;
-                Cantidad = servicio.GetCantidad();
-                CantidadPaginas = Cantidad / CantidadPorPaginas+1;
-                MostrarPaginado(paginaActual);
+                InicializarGrilla();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void CreateButtons(int paginas)
+        {
+            BotonesPnl.Controls.Clear();
+            for (int i = 0; i < paginas; i++)
+            {
+                Button b = new Button();
+                b.Text = $"{i + 1}";
+                b.Location=new Point(15+(32*i), 28);
+                b.Size = new Size(30,30);
+                b.BackColor = Color.Black;
+                b.ForeColor = Color.White;
+                b.FlatStyle = FlatStyle.Popup;
+                b.Click += MiClick;//se agrega un manejador al evento
+                BotonesPnl.Controls.Add(b);
+            }
+        }
+
+        private void MiClick(object sender, EventArgs e)
+        {
+            Button b =(Button) sender;
+            paginaActual =int.Parse( b.Text);
+            MostrarPaginado(paginaActual);
+        }
+
+        private int CalcularCantidadPorPaginas(int cantidad,int cantidadPorPaginas)
+        {
+            if (cantidad< cantidadPorPaginas)
+            {
+                return 1;
+            }
+            if (cantidad%cantidadPorPaginas>0)
+            {
+               return cantidad / (cantidadPorPaginas + 1);
+            }
+            else
+            {
+                return cantidad / cantidadPorPaginas;
             }
         }
 
@@ -64,42 +103,102 @@ namespace Practico01WF.UI
             r.Tag = p;
         }
 
-        private void SiguienteBtn_Click(object sender, EventArgs e)
-        {
-            paginaActual++;
-            if (paginaActual>CantidadPaginas)
-            {
-                paginaActual = CantidadPaginas;
-            }
-            MostrarPaginado(paginaActual);
-        }
+        //private void SiguienteBtn_Click(object sender, EventArgs e)
+        //{
+        //    paginaActual++;
+        //    if (paginaActual>CantidadPaginas)
+        //    {
+        //        paginaActual = CantidadPaginas;
+        //    }
+        //    MostrarPaginado(paginaActual);
+        //}
 
-        private void AnteriorBtn_Click(object sender, EventArgs e)
-        {
-            paginaActual--;
-            if (paginaActual < 1)
-            {
-                paginaActual = 1;
-            }
-            MostrarPaginado(paginaActual);
-        }
+        //private void AnteriorBtn_Click(object sender, EventArgs e)
+        //{
+        //    paginaActual--;
+        //    if (paginaActual < 1)
+        //    {
+        //        paginaActual = 1;
+        //    }
+        //    MostrarPaginado(paginaActual);
+        //}
 
-        private void UltimoBtn_Click(object sender, EventArgs e)
-        {
-            paginaActual = CantidadPaginas;
-            MostrarPaginado(paginaActual);
-        }
+        //private void UltimoBtn_Click(object sender, EventArgs e)
+        //{
+        //    paginaActual = CantidadPaginas;
+        //    MostrarPaginado(paginaActual);
+        //}
 
-        private void PrimeroBtn_Click(object sender, EventArgs e)
-        {
-            paginaActual = 1;
-            MostrarPaginado(paginaActual);
-        }
+        //private void PrimeroBtn_Click(object sender, EventArgs e)
+        //{
+        //    paginaActual = 1;
+        //    MostrarPaginado(paginaActual);
+        //}
 
         private void MostrarPaginado(int paginaActual)
         {
-            lista = servicio.GetLista(CantidadPorPaginas, paginaActual);
+            if (filtro==Filtro.off)
+            {
+                lista = servicio.GetLista(CantidadPorPaginas, paginaActual);
+            }
+            else if (filtro==Filtro.on)
+            {
+                lista = servicio.Find(p => p.TipoDePlantaId == 1, CantidadPorPaginas, paginaActual);
+            }
             MostrarDatosEnGrilla();
+
+        }
+
+        private void BuscarBtn_Click(object sender, EventArgs e)
+        {
+            frmBuscarPlanta frm = new frmBuscarPlanta();
+            frm.Text = "Buscar Planta";
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr==DialogResult.OK)
+            {
+                try
+                {
+                    filtro = Filtro.on;
+                    BuscarBtn.Image = Properties.Resources.search_more_40px;
+                    BuscarBtn.BackColor = Color.Orange;
+                    Cantidad = servicio.GetCantidad(p => p.TipoDePlantaId == 1);
+
+                    paginaActual = 1;
+                    CantidadPaginas = CalcularCantidadPorPaginas(Cantidad, CantidadPorPaginas);
+                    CreateButtons(CantidadPaginas);
+                    MostrarPaginado(paginaActual);
+                }
+                catch (Exception ex)
+                {
+
+                    throw new Exception(ex.Message);
+                }
+            }
+           
+        }
+
+        private void ActualizarBtn_Click(object sender, EventArgs e)
+        {
+            BuscarBtn.Image = Properties.Resources.search_40px;
+            BuscarBtn.BackColor = Color.Transparent;
+            try
+            {
+                filtro = Filtro.off;
+                InicializarGrilla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void InicializarGrilla()
+        {
+            paginaActual = 1;
+            Cantidad = servicio.GetCantidad();
+            CantidadPaginas = CalcularCantidadPorPaginas(Cantidad, CantidadPorPaginas);
+            CreateButtons(CantidadPaginas);
+            MostrarPaginado(paginaActual);
         }
 
     }

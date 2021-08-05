@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practico01WF.UI.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace Practico01WF.UI
         public frmPlantasAe()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            HelperCombo.CargarComboTipoEnvase(ref TipoEnvaseCmb);
+            HelperCombo.CargarComboTipoPlanta(ref TipoPlantaCmb);
         }
     }
 }

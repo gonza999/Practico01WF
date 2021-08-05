@@ -25,11 +25,41 @@ namespace Practico01WF.Data.Repositorios
             throw new NotImplementedException();
         }
 
+        public List<Planta> Find(Func<Planta, bool> predicate, int cantidad, int pagina)
+        {
+            try
+            {
+                return context.Plantas.Where(predicate)
+                    .OrderBy(p=>p.PlantaId)
+                    .Skip(cantidad*(pagina-1))
+                    .Take(cantidad)
+                    .ToList();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+
+            }
+        }
+
         public int GetCantidad()
         {
             try
             {
                 return context.Plantas.Count();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+
+            }
+        }
+
+        public int GetCantidad(Func<Planta, bool> predicate)
+        {
+            try
+            {
+                return context.Plantas.Count(predicate);
             }
             catch (Exception e)
             {

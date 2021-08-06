@@ -2,6 +2,7 @@
 using Practico01WF.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +18,44 @@ namespace Practico01WF.Data.Repositorios
         }
         public void Borrar(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var plantaInDb = context.Plantas.SingleOrDefault(p => p.PlantaId == id);
+                if (plantaInDb == null)
+                {
+                    throw new Exception("Planta inexistente");
+
+                }
+
+                context.Entry(plantaInDb).State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public bool Existe(Planta planta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (planta.PlantaId == 0)
+                {
+                    return context.Plantas.Any(p => p.Descripcion == planta.Descripcion);
+                }
+                else
+                {
+                    return context.Plantas
+                        .Any(p => p.Descripcion == planta.Descripcion && p.PlantaId != planta.PlantaId);
+
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
         }
 
         public List<Planta> Find(Func<Planta, bool> predicate, int cantidad, int pagina)
@@ -92,7 +125,34 @@ namespace Practico01WF.Data.Repositorios
 
         public void Guardar(Planta planta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (planta.PlantaId == 0)
+                {
+                    context.Plantas.Add(planta);
+                }
+                else
+                {
+                    var plantaInDb = context.Plantas.SingleOrDefault(p => p.PlantaId == planta.PlantaId);
+                    if (plantaInDb == null)
+                    {
+                        throw new Exception("Planta inexistente");
+                    }
+
+                    plantaInDb.Descripcion = planta.Descripcion;
+                    plantaInDb.TipoDeEnvaseId = planta.TipoDeEnvaseId;
+                    plantaInDb.TipoDePlantaId = plantaInDb.TipoDePlantaId;
+
+                    context.Entry(plantaInDb).State = EntityState.Modified;
+
+                }
+
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }

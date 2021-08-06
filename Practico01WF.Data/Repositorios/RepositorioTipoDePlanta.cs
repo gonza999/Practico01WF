@@ -130,5 +130,18 @@ namespace Practico01WF.Data.Repositorios
                 throw new Exception(e.Message);
             }
         }
+
+        public List<IGrouping<int, Planta>> GetGrupos()
+        {
+            try
+            {
+                return context.Plantas.GroupBy(p=>p.TipoDePlantaId).ToList();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+        }
     }
 }

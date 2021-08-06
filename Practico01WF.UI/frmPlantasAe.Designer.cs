@@ -29,6 +29,7 @@ namespace Practico01WF.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PlantaTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,8 +38,10 @@ namespace Practico01WF.UI
             this.TipoEnvaseCmb = new System.Windows.Forms.ComboBox();
             this.OkPbx = new System.Windows.Forms.PictureBox();
             this.CancelPbx = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.OkPbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPbx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // PlantaTxt
@@ -108,6 +111,7 @@ namespace Practico01WF.UI
             this.OkPbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.OkPbx.TabIndex = 10;
             this.OkPbx.TabStop = false;
+            this.OkPbx.Click += new System.EventHandler(this.OkPbx_Click);
             // 
             // CancelPbx
             // 
@@ -120,6 +124,11 @@ namespace Practico01WF.UI
             this.CancelPbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CancelPbx.TabIndex = 11;
             this.CancelPbx.TabStop = false;
+            this.CancelPbx.Click += new System.EventHandler(this.CancelPbx_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmPlantasAe
             // 
@@ -141,6 +150,7 @@ namespace Practico01WF.UI
             this.Text = "frmPlantasAe";
             ((System.ComponentModel.ISupportInitialize)(this.OkPbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPbx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +166,6 @@ namespace Practico01WF.UI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox TipoPlantaCmb;
         private System.Windows.Forms.ComboBox TipoEnvaseCmb;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

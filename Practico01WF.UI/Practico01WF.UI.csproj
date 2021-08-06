@@ -62,6 +62,12 @@
     <Compile Include="frmBuscarPlanta.Designer.cs">
       <DependentUpon>frmBuscarPlanta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarTipoDePlanta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarTipoDePlanta.Designer.cs">
+      <DependentUpon>frmBuscarTipoDePlanta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlantas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBuscarPlanta.resx">
       <DependentUpon>frmBuscarPlanta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarTipoDePlanta.resx">
+      <DependentUpon>frmBuscarTipoDePlanta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlantas.resx">
       <DependentUpon>frmPlantas.cs</DependentUpon>

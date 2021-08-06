@@ -29,8 +29,9 @@ namespace Practico01WF.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DetallesGrillaPnl = new System.Windows.Forms.Panel();
+            this.BotonesPnl = new System.Windows.Forms.Panel();
             this.CantidadPaginasLbl = new System.Windows.Forms.Label();
             this.PaginaActualLbl = new System.Windows.Forms.Label();
             this.CantidadLbl = new System.Windows.Forms.Label();
@@ -39,21 +40,20 @@ namespace Practico01WF.UI
             this.label = new System.Windows.Forms.Label();
             this.ToolStripPnl = new System.Windows.Forms.Panel();
             this.HerramientasTsb = new System.Windows.Forms.ToolStrip();
+            this.NuevoBtn = new System.Windows.Forms.ToolStripButton();
+            this.BorrarBtn = new System.Windows.Forms.ToolStripButton();
+            this.EditarBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.BuscarBtn = new System.Windows.Forms.ToolStripButton();
+            this.ActualizarBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ImprimirBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.GrillaPnl = new System.Windows.Forms.Panel();
             this.DatosDgv = new System.Windows.Forms.DataGridView();
             this.CmnPlanta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CmnTipoPlanta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmnTipoEnvase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BotonesPnl = new System.Windows.Forms.Panel();
-            this.NuevoBtn = new System.Windows.Forms.ToolStripButton();
-            this.BorrarBtn = new System.Windows.Forms.ToolStripButton();
-            this.EditarBtn = new System.Windows.Forms.ToolStripButton();
-            this.BuscarBtn = new System.Windows.Forms.ToolStripButton();
-            this.ActualizarBtn = new System.Windows.Forms.ToolStripButton();
-            this.ImprimirBtn = new System.Windows.Forms.ToolStripButton();
             this.DetallesGrillaPnl.SuspendLayout();
             this.ToolStripPnl.SuspendLayout();
             this.HerramientasTsb.SuspendLayout();
@@ -76,6 +76,14 @@ namespace Practico01WF.UI
             this.DetallesGrillaPnl.Name = "DetallesGrillaPnl";
             this.DetallesGrillaPnl.Size = new System.Drawing.Size(800, 78);
             this.DetallesGrillaPnl.TabIndex = 3;
+            // 
+            // BotonesPnl
+            // 
+            this.BotonesPnl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BotonesPnl.Location = new System.Drawing.Point(175, 0);
+            this.BotonesPnl.Name = "BotonesPnl";
+            this.BotonesPnl.Size = new System.Drawing.Size(625, 78);
+            this.BotonesPnl.TabIndex = 3;
             // 
             // CantidadPaginasLbl
             // 
@@ -170,15 +178,86 @@ namespace Practico01WF.UI
             this.HerramientasTsb.TabIndex = 0;
             this.HerramientasTsb.Text = "toolStrip1";
             // 
+            // NuevoBtn
+            // 
+            this.NuevoBtn.BackColor = System.Drawing.Color.Transparent;
+            this.NuevoBtn.Image = global::Practico01WF.UI.Properties.Resources.add_40px;
+            this.NuevoBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.NuevoBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.NuevoBtn.Name = "NuevoBtn";
+            this.NuevoBtn.Size = new System.Drawing.Size(46, 59);
+            this.NuevoBtn.Text = "Nuevo";
+            this.NuevoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.NuevoBtn.Click += new System.EventHandler(this.NuevoBtn_Click);
+            // 
+            // BorrarBtn
+            // 
+            this.BorrarBtn.BackColor = System.Drawing.Color.Transparent;
+            this.BorrarBtn.Image = global::Practico01WF.UI.Properties.Resources.trash_40px;
+            this.BorrarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BorrarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BorrarBtn.Name = "BorrarBtn";
+            this.BorrarBtn.Size = new System.Drawing.Size(44, 59);
+            this.BorrarBtn.Text = "Borrar";
+            this.BorrarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BorrarBtn.Click += new System.EventHandler(this.BorrarBtn_Click);
+            // 
+            // EditarBtn
+            // 
+            this.EditarBtn.BackColor = System.Drawing.Color.Transparent;
+            this.EditarBtn.Image = global::Practico01WF.UI.Properties.Resources.edit_40px;
+            this.EditarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.EditarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditarBtn.Name = "EditarBtn";
+            this.EditarBtn.Size = new System.Drawing.Size(44, 59);
+            this.EditarBtn.Text = "Editar";
+            this.EditarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.EditarBtn.Click += new System.EventHandler(this.EditarBtn_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
+            // BuscarBtn
+            // 
+            this.BuscarBtn.BackColor = System.Drawing.Color.Transparent;
+            this.BuscarBtn.Image = global::Practico01WF.UI.Properties.Resources.search_40px;
+            this.BuscarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BuscarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BuscarBtn.Name = "BuscarBtn";
+            this.BuscarBtn.Size = new System.Drawing.Size(46, 59);
+            this.BuscarBtn.Text = "Buscar";
+            this.BuscarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BuscarBtn.Click += new System.EventHandler(this.BuscarBtn_Click);
+            // 
+            // ActualizarBtn
+            // 
+            this.ActualizarBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ActualizarBtn.Image = global::Practico01WF.UI.Properties.Resources.update_left_rotation_40px;
+            this.ActualizarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ActualizarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ActualizarBtn.Name = "ActualizarBtn";
+            this.ActualizarBtn.Size = new System.Drawing.Size(63, 59);
+            this.ActualizarBtn.Text = "Actualizar";
+            this.ActualizarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ActualizarBtn.Click += new System.EventHandler(this.ActualizarBtn_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // ImprimirBtn
+            // 
+            this.ImprimirBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ImprimirBtn.Image = global::Practico01WF.UI.Properties.Resources.printer_40px;
+            this.ImprimirBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ImprimirBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ImprimirBtn.Name = "ImprimirBtn";
+            this.ImprimirBtn.Size = new System.Drawing.Size(57, 59);
+            this.ImprimirBtn.Text = "Imprimir";
+            this.ImprimirBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator3
             // 
@@ -198,8 +277,8 @@ namespace Practico01WF.UI
             // DatosDgv
             // 
             this.DatosDgv.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DatosDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DatosDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DatosDgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DatosDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DatosDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -237,82 +316,6 @@ namespace Practico01WF.UI
             this.cmnTipoEnvase.HeaderText = "Tipo de Envase";
             this.cmnTipoEnvase.Name = "cmnTipoEnvase";
             this.cmnTipoEnvase.ReadOnly = true;
-            // 
-            // BotonesPnl
-            // 
-            this.BotonesPnl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BotonesPnl.Location = new System.Drawing.Point(175, 0);
-            this.BotonesPnl.Name = "BotonesPnl";
-            this.BotonesPnl.Size = new System.Drawing.Size(625, 78);
-            this.BotonesPnl.TabIndex = 3;
-            // 
-            // NuevoBtn
-            // 
-            this.NuevoBtn.BackColor = System.Drawing.Color.Transparent;
-            this.NuevoBtn.Image = global::Practico01WF.UI.Properties.Resources.add_40px;
-            this.NuevoBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.NuevoBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NuevoBtn.Name = "NuevoBtn";
-            this.NuevoBtn.Size = new System.Drawing.Size(46, 59);
-            this.NuevoBtn.Text = "Nuevo";
-            this.NuevoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // BorrarBtn
-            // 
-            this.BorrarBtn.BackColor = System.Drawing.Color.Transparent;
-            this.BorrarBtn.Image = global::Practico01WF.UI.Properties.Resources.trash_40px;
-            this.BorrarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BorrarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BorrarBtn.Name = "BorrarBtn";
-            this.BorrarBtn.Size = new System.Drawing.Size(44, 59);
-            this.BorrarBtn.Text = "Borrar";
-            this.BorrarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // EditarBtn
-            // 
-            this.EditarBtn.BackColor = System.Drawing.Color.Transparent;
-            this.EditarBtn.Image = global::Practico01WF.UI.Properties.Resources.edit_40px;
-            this.EditarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.EditarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EditarBtn.Name = "EditarBtn";
-            this.EditarBtn.Size = new System.Drawing.Size(44, 59);
-            this.EditarBtn.Text = "Editar";
-            this.EditarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // BuscarBtn
-            // 
-            this.BuscarBtn.BackColor = System.Drawing.Color.Transparent;
-            this.BuscarBtn.Image = global::Practico01WF.UI.Properties.Resources.search_40px;
-            this.BuscarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BuscarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BuscarBtn.Name = "BuscarBtn";
-            this.BuscarBtn.Size = new System.Drawing.Size(46, 59);
-            this.BuscarBtn.Text = "Buscar";
-            this.BuscarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BuscarBtn.Click += new System.EventHandler(this.BuscarBtn_Click);
-            // 
-            // ActualizarBtn
-            // 
-            this.ActualizarBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ActualizarBtn.Image = global::Practico01WF.UI.Properties.Resources.update_left_rotation_40px;
-            this.ActualizarBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ActualizarBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ActualizarBtn.Name = "ActualizarBtn";
-            this.ActualizarBtn.Size = new System.Drawing.Size(63, 59);
-            this.ActualizarBtn.Text = "Actualizar";
-            this.ActualizarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ActualizarBtn.Click += new System.EventHandler(this.ActualizarBtn_Click);
-            // 
-            // ImprimirBtn
-            // 
-            this.ImprimirBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ImprimirBtn.Image = global::Practico01WF.UI.Properties.Resources.printer_40px;
-            this.ImprimirBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ImprimirBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ImprimirBtn.Name = "ImprimirBtn";
-            this.ImprimirBtn.Size = new System.Drawing.Size(57, 59);
-            this.ImprimirBtn.Text = "Imprimir";
-            this.ImprimirBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // frmPlantas
             // 

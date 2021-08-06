@@ -19,12 +19,28 @@ namespace Practico01WF.Services.Servicios
         }
         public void Borrar(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                repositorioPlanta.Borrar(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+
+            }
         }
 
         public bool Existe(Planta planta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return repositorioPlanta.Existe(planta);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+
+            }
         }
 
         public List<Planta> Find(Func<Planta, bool> predicate, int cantidad, int pagina)
@@ -86,7 +102,15 @@ namespace Practico01WF.Services.Servicios
 
         public void Guardar(Planta planta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                repositorioPlanta.Guardar(planta);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+
+            }
         }
     }
 }

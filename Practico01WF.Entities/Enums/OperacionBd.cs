@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Practico01WF.Entities.Enums
 {
-    public enum Filtro
+    public enum OperacionBd
     {
-        off=1,
-        TipoPlanta=2,
-        TipoEnvase=3
+        Alta = 1,
+        Borrar,
+        Editar
     }
 }

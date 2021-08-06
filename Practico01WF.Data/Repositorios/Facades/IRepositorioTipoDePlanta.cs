@@ -19,5 +19,7 @@ namespace Practico01WF.Data.Repositorios.Facades
         bool EstaRelacionado(TipoDePlanta tipoDePlanta);
         int GetCantidad();
         void Borrar(int id);
+
+        List<IGrouping<int, Planta>> GetGrupos();
     }
 }

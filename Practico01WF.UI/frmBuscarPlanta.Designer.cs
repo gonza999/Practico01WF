@@ -29,6 +29,7 @@ namespace Practico01WF.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TipoEnvaseCmb = new System.Windows.Forms.ComboBox();
             this.TipoPlantaCmb = new System.Windows.Forms.ComboBox();
             this.OkPbx = new System.Windows.Forms.PictureBox();
@@ -37,8 +38,10 @@ namespace Practico01WF.UI
             this.label2 = new System.Windows.Forms.Label();
             this.TipoDePlantaRbn = new System.Windows.Forms.RadioButton();
             this.TipoDeEnvaseRbn = new System.Windows.Forms.RadioButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.OkPbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPbx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TipoEnvaseCmb
@@ -50,6 +53,7 @@ namespace Practico01WF.UI
             this.TipoEnvaseCmb.Name = "TipoEnvaseCmb";
             this.TipoEnvaseCmb.Size = new System.Drawing.Size(121, 21);
             this.TipoEnvaseCmb.TabIndex = 18;
+            this.TipoEnvaseCmb.SelectedIndexChanged += new System.EventHandler(this.TipoEnvaseCmb_SelectedIndexChanged);
             // 
             // TipoPlantaCmb
             // 
@@ -60,6 +64,7 @@ namespace Practico01WF.UI
             this.TipoPlantaCmb.Name = "TipoPlantaCmb";
             this.TipoPlantaCmb.Size = new System.Drawing.Size(121, 21);
             this.TipoPlantaCmb.TabIndex = 19;
+            this.TipoPlantaCmb.SelectedIndexChanged += new System.EventHandler(this.TipoPlantaCmb_SelectedIndexChanged);
             // 
             // OkPbx
             // 
@@ -129,6 +134,10 @@ namespace Practico01WF.UI
             this.TipoDeEnvaseRbn.UseVisualStyleBackColor = true;
             this.TipoDeEnvaseRbn.CheckedChanged += new System.EventHandler(this.TipoDeEnvaseRbn_CheckedChanged);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmBuscarPlanta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +159,7 @@ namespace Practico01WF.UI
             this.Load += new System.EventHandler(this.frmBuscarPlanta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OkPbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPbx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +175,6 @@ namespace Practico01WF.UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton TipoDePlantaRbn;
         private System.Windows.Forms.RadioButton TipoDeEnvaseRbn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

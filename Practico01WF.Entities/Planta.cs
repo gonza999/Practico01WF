@@ -1,8 +1,9 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Practico01WF.Entities
 {
-    public class Planta
+    public class Planta:ICloneable
     {
         public int PlantaId { get; set; }
 
@@ -19,5 +20,10 @@ namespace Practico01WF.Entities
         public virtual TipoDeEnvase TipoDeEnvase { get; set; }
 
         public virtual TipoDePlanta TipoDePlanta { get; set; }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

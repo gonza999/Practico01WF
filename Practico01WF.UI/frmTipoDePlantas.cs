@@ -189,5 +189,12 @@ namespace Practico01WF.UI
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BuscarBtn_Click(object sender, EventArgs e)
+        {
+            frmBuscarTipoDePlanta frm = new frmBuscarTipoDePlanta();
+            frm.Text = "Buscar por Tipo de Planta";
+            frm.ShowDialog(this);
+        }
     }
 }
